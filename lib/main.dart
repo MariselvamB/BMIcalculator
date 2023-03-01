@@ -1,5 +1,8 @@
-import 'package:bmi/widgets/Gender.dart';
-import 'package:bmi/widgets/appColors.dart';
+import 'package:bmi/screens/gender/Gender.dart';
+import 'package:bmi/screens/login/LoginPage.dart';
+import 'package:bmi/screens/parameters/CalculationPage.dart';
+
+import 'package:bmi/screens/result/result.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,19 +18,5 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
     );
-  }
-}
-
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  @override
-  Widget build(BuildContext context) {
-    return LoginPage();
   }
 }
