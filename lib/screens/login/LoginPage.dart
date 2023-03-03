@@ -6,7 +6,6 @@ import 'package:bmi/units/appclass.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:swipeable_button_view/swipeable_button_view.dart';
-import 'package:swipeable_button_view/swipeable_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -49,9 +48,9 @@ class _LoginPageState extends State<LoginPage> {
                                   offset: const Offset(4.0, 4.0),
                                   blurRadius: 15,
                                   spreadRadius: 2),
-                              BoxShadow(
+                              const BoxShadow(
                                   color: Colors.white,
-                                  offset: const Offset(-1.0, -1.0),
+                                  offset: Offset(-1.0, -1.0),
                                   blurRadius: 15,
                                   spreadRadius: 2)
                             ]),
@@ -116,26 +115,26 @@ class _LoginPageState extends State<LoginPage> {
                         context,
                         PageTransition(
                             type: PageTransitionType.fade,
-                            child: genderPage()));
+                            child: const genderPage()));
 
                     setState(() {
                       AppClass.isFinish = false;
                     });
                   },
                   onWaitingProcess: () {
-                    Future.delayed(Duration(seconds: 1), () {
+                    Future.delayed(const Duration(seconds: 1), () {
                       setState(() {
                         AppClass.isFinish = true;
                       });
                     });
                   },
                   activeColor: AppColors.blue,
-                  buttonWidget: Icon(
+                  buttonWidget: const Icon(
                     Icons.arrow_forward_ios_rounded,
                     color: AppColors.blue,
                   ),
                   buttonText: "Let's Start",
-                  buttontextstyle: TextStyle(
+                  buttontextstyle: const TextStyle(
                     decoration: TextDecoration.none,
                     fontFamily: 'Sitka Small Semibold',
                     fontWeight: FontWeight.w600,

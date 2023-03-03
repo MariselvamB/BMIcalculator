@@ -45,9 +45,9 @@ class _GenderWidgetState extends State<GenderWidget> {
                           offset: const Offset(4.0, 4.0),
                           blurRadius: 15,
                           spreadRadius: 2),
-                      BoxShadow(
+                      const BoxShadow(
                           color: Colors.white,
-                          offset: const Offset(-1.0, -1.0),
+                          offset: Offset(-1.0, -1.0),
                           blurRadius: 15,
                           spreadRadius: 2)
                     ],
@@ -61,7 +61,7 @@ class _GenderWidgetState extends State<GenderWidget> {
               ),
               Container(
                 padding: const EdgeInsets.all(15),
-                margin: EdgeInsets.only(top: 20),
+                margin: const EdgeInsets.only(top: 20),
                 alignment: Alignment.center,
                 width: 100,
                 child: const Text(
@@ -102,9 +102,9 @@ class _GenderWidgetState extends State<GenderWidget> {
                           offset: const Offset(4.0, 4.0),
                           blurRadius: 15,
                           spreadRadius: 2),
-                      BoxShadow(
+                      const BoxShadow(
                           color: Colors.white,
-                          offset: const Offset(-1.0, -1.0),
+                          offset: Offset(-1.0, -1.0),
                           blurRadius: 15,
                           spreadRadius: 2)
                     ],
@@ -118,7 +118,7 @@ class _GenderWidgetState extends State<GenderWidget> {
               ),
               Container(
                 padding: const EdgeInsets.all(15),
-                margin: EdgeInsets.only(top: 20),
+                margin: const EdgeInsets.only(top: 20),
                 alignment: Alignment.center,
                 width: 100,
                 child: const Center(

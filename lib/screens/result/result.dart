@@ -1,8 +1,8 @@
 import 'package:bmi/screens/gender/Gender.dart';
 import 'package:bmi/units/appColors.dart';
 import 'package:bmi/units/appclass.dart';
-import 'package:bmi/widgets/CalBMI.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:pretty_gauge/pretty_gauge.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -20,7 +20,7 @@ class _ResultPageState extends State<ResultPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.all(40),
+        padding: const EdgeInsets.all(15),
         color: AppColors.white,
         child: Column(
           children: [
@@ -109,9 +109,9 @@ class _ResultPageState extends State<ResultPage> {
                           offset: const Offset(4.0, 4.0),
                           blurRadius: 15,
                           spreadRadius: 2),
-                      BoxShadow(
+                      const BoxShadow(
                           color: Colors.white,
-                          offset: const Offset(-1.0, -1.0),
+                          offset: Offset(-1.0, -1.0),
                           blurRadius: 15,
                           spreadRadius: 2)
                     ],
@@ -142,9 +142,9 @@ class _ResultPageState extends State<ResultPage> {
                             offset: const Offset(4.0, 4.0),
                             blurRadius: 15,
                             spreadRadius: 2),
-                        BoxShadow(
+                        const BoxShadow(
                             color: Colors.white,
-                            offset: const Offset(-1.0, -1.0),
+                            offset: Offset(-1.0, -1.0),
                             blurRadius: 15,
                             spreadRadius: 2)
                       ],
@@ -165,7 +165,7 @@ class _ResultPageState extends State<ResultPage> {
                         ],
                         valueWidget: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             Text(
                                 // CalculateBMI.resultBmi!.toStringAsFixed(1),
                                 "18.5",
@@ -192,11 +192,11 @@ class _ResultPageState extends State<ResultPage> {
                             // CalculateBMI.resultBmi!,
                             18.5,
                         needleColor: AppColors.blue,
-                        endMarkerStyle: TextStyle(
+                        endMarkerStyle: const TextStyle(
                             fontSize: 15,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
-                        startMarkerStyle: TextStyle(
+                        startMarkerStyle: const TextStyle(
                             fontSize: 15,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
@@ -205,14 +205,14 @@ class _ResultPageState extends State<ResultPage> {
               ),
             ),
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Container(
                 margin: const EdgeInsets.all(10),
                 alignment: Alignment.center,
-                child: Text(
+                child: const Text(
                   // CalculateBMI.Describtion.toString(),
                   "you'r e in the underweight range ",
-                  style: const TextStyle(
+                  style: TextStyle(
                     decoration: TextDecoration.none,
                     fontFamily: 'Sitka Small Semibold',
                     fontWeight: FontWeight.bold,
@@ -227,10 +227,10 @@ class _ResultPageState extends State<ResultPage> {
               flex: 1,
               child: Container(
                 alignment: Alignment.center,
-                child: Text(
+                child: const Text(
                   // CalculateBMI.FeedBack.toString(),
                   "Eat as much as you want 👍 ",
-                  style: const TextStyle(
+                  style: TextStyle(
                     decoration: TextDecoration.none,
                     fontFamily: 'Sitka Small Semibold',
                     fontWeight: FontWeight.bold,
@@ -248,11 +248,12 @@ class _ResultPageState extends State<ResultPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   GestureDetector(
-                    onTap: () {
-                      Navigator.push(
+                    onTap: () async {
+                      await Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => const genderPage()));
+                          PageTransition(
+                              type: PageTransitionType.fade,
+                              child: const genderPage()));
                     },
                     child: Container(
                       alignment: Alignment.center,

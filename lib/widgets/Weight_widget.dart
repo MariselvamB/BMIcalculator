@@ -18,7 +18,6 @@ class WeigetWidget extends StatefulWidget {
 
 class _WeigetWidgetState extends State<WeigetWidget> {
   @override
-  @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(10),
@@ -48,7 +47,7 @@ class _WeigetWidgetState extends State<WeigetWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    margin: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(5),
                     padding: const EdgeInsets.all(15),
                     child: const Text(
                       "Weiget",
@@ -70,7 +69,7 @@ class _WeigetWidgetState extends State<WeigetWidget> {
                 ],
               ),
               Container(
-                margin: const EdgeInsets.all(10),
+                margin: const EdgeInsets.all(5),
                 padding: const EdgeInsets.all(10),
                 child: Text(
                   AppClass.weigetcounter.toString(),

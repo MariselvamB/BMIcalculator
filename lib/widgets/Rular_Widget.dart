@@ -1,6 +1,6 @@
-// import 'dart:html';
+ 
 
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, file_names
 
 import 'package:bmi/units/appColors.dart';
 import 'package:bmi/units/appclass.dart';
@@ -9,7 +9,7 @@ import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
 
 class RularWidget extends StatefulWidget {
   final Function(int) onChange;
-  RularWidget({Key? key, required this.onChange}) : super(key: key);
+  const RularWidget({Key? key, required this.onChange}) : super(key: key);
 
   @override
   _RularWidgetState createState() => _RularWidgetState();
@@ -56,17 +56,15 @@ class _RularWidgetState extends State<RularWidget> {
             ],
           ),
           const SizedBox(height: 20),
-          Container(
-            child: Text(
-              AppClass.heightValue.toString(),
-              style: const TextStyle(
-                decoration: TextDecoration.none,
-                fontFamily: 'Sitka Small Semibold',
-                fontWeight: FontWeight.w600,
-                fontSize: 30,
-                letterSpacing: 1.5,
-                color: AppColors.black,
-              ),
+          Text(
+            AppClass.heightValue.toString(),
+            style: const TextStyle(
+              decoration: TextDecoration.none,
+              fontFamily: 'Sitka Small Semibold',
+              fontWeight: FontWeight.w600,
+              fontSize: 30,
+              letterSpacing: 1.5,
+              color: AppColors.black,
             ),
           ),
           const SizedBox(height: 20),
@@ -82,9 +80,9 @@ class _RularWidgetState extends State<RularWidget> {
                       offset: const Offset(4.0, 4.0),
                       blurRadius: 15,
                       spreadRadius: 2),
-                  BoxShadow(
+                  const BoxShadow(
                       color: Colors.white,
-                      offset: const Offset(-1.0, -1.0),
+                      offset: Offset(-1.0, -1.0),
                       blurRadius: 15,
                       spreadRadius: 2)
                 ],
@@ -92,7 +90,7 @@ class _RularWidgetState extends State<RularWidget> {
               ),
               child: RulerPicker(
                 rulerBackgroundColor: AppColors.white,
-                rulerScaleTextStyle: TextStyle(
+                rulerScaleTextStyle: const TextStyle(
                   decoration: TextDecoration.none,
                   fontFamily: 'Sitka Small Semibold',
                   fontWeight: FontWeight.w600,

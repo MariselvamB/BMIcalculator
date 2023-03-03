@@ -1,8 +1,5 @@
-import 'package:bmi/screens/gender/Gender.dart';
 import 'package:bmi/screens/login/LoginPage.dart';
-import 'package:bmi/screens/parameters/CalculationPage.dart';
 
-import 'package:bmi/screens/result/result.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -21,7 +21,7 @@ class _Age_WidgetState extends State<Age_Widget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         color: AppColors.white,
@@ -31,9 +31,9 @@ class _Age_WidgetState extends State<Age_Widget> {
               offset: const Offset(4.0, 4.0),
               blurRadius: 15,
               spreadRadius: 2),
-          BoxShadow(
+          const BoxShadow(
               color: Colors.white,
-              offset: const Offset(-0.0, -0.0),
+              offset: Offset(-0.0, -0.0),
               blurRadius: 15,
               spreadRadius: 2)
         ],
@@ -48,7 +48,7 @@ class _Age_WidgetState extends State<Age_Widget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    margin: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(5),
                     padding: const EdgeInsets.all(15),
                     child: const Text(
                       "Age",
@@ -62,7 +62,7 @@ class _Age_WidgetState extends State<Age_Widget> {
                       ),
                     ),
                   ),
-                  Icon(
+                  const Icon(
                     Icons.align_horizontal_right_rounded,
                     size: 20,
                     color: AppColors.blue,
@@ -70,7 +70,7 @@ class _Age_WidgetState extends State<Age_Widget> {
                 ],
               ),
               Container(
-                margin: const EdgeInsets.all(10),
+                margin: const EdgeInsets.all(5),
                 padding: const EdgeInsets.all(10),
                 child: Text(
                   AppClass.agecounter.toString(),
@@ -109,7 +109,7 @@ class _Age_WidgetState extends State<Age_Widget> {
                       color: AppColors.indigo,
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     "+",
                     style: TextStyle(
                       decoration: TextDecoration.none,
@@ -140,7 +140,7 @@ class _Age_WidgetState extends State<Age_Widget> {
                       color: AppColors.indigo,
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     "-",
                     style: TextStyle(
                       decoration: TextDecoration.none,

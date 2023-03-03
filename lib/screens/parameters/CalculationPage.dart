@@ -27,16 +27,16 @@ class _CalculationPageState extends State<CalculationPage> {
         backgroundColor: AppColors.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
             color: AppColors.black,
             size: 15,
           ),
-          onPressed: () {
-            Navigator.push(
+          onPressed: () async {
+            await Navigator.push(
                 context,
                 PageTransition(
-                    type: PageTransitionType.fade, child: genderPage()));
+                    type: PageTransitionType.fade, child: const genderPage()));
           },
         ),
         title: const Text(
@@ -52,7 +52,6 @@ class _CalculationPageState extends State<CalculationPage> {
         ),
       ),
       body: Container(
-        padding: const EdgeInsets.only(top: 20),
         color: AppColors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -64,9 +63,6 @@ class _CalculationPageState extends State<CalculationPage> {
                   onChange: (ageVal) {
                     AppClass.agecounter = ageVal;
                   },
-                ),
-                const SizedBox(
-                  height: 15,
                 ),
                 WeigetWidget(
                   onChange: (WeigetVal) {
@@ -104,8 +100,10 @@ class _CalculationPageState extends State<CalculationPage> {
     );
   }
 
-  void NavigatorPushResultScreen() {
-    Navigator.push(context,
-        PageTransition(type: PageTransitionType.fade, child: ResultPage()));
+  void NavigatorPushResultScreen() async {
+    await Navigator.push(
+        context,
+        PageTransition(
+            type: PageTransitionType.fade, child: const ResultPage()));
   }
 }
