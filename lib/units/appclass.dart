@@ -11,7 +11,6 @@ class AppClass {
   static int heightValue = 110;
   static int agecounter = 25;
   static int weigetcounter = 80;
-
   static int index = 0;
   static Color activeColor = AppColors.blue;
   static Color inActiveColor = AppColors.white;
