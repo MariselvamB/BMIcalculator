@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, non_constant_identifier_names
+// ignore_for_file: file_names
 
 import 'package:bmi/units/appColors.dart';
 import 'package:bmi/units/appclass.dart';
@@ -91,7 +91,7 @@ class _WeigetWidgetState extends State<WeigetWidget> {
             children: [
               GestureDetector(
                 onTap: () {
-                  _increment_WeigetCounterAdd();
+                  _incrementWeigetCounterAdd();
                 },
                 child: Container(
                   margin: const EdgeInsets.all(15),
@@ -122,7 +122,7 @@ class _WeigetWidgetState extends State<WeigetWidget> {
               ),
               GestureDetector(
                 onTap: () {
-                  _increment_WeigetCounterSub();
+                  _incrementWeigetCounterSub();
                 },
                 child: Container(
                   margin: const EdgeInsets.all(15),
@@ -158,7 +158,7 @@ class _WeigetWidgetState extends State<WeigetWidget> {
     );
   }
 
-  void _increment_WeigetCounterAdd() {
+  void _incrementWeigetCounterAdd() {
     setState(() {
       AppClass.weigetcounter++;
     });
@@ -166,7 +166,7 @@ class _WeigetWidgetState extends State<WeigetWidget> {
     widget.onChange(AppClass.weigetcounter);
   }
 
-  void _increment_WeigetCounterSub() {
+  void _incrementWeigetCounterSub() {
     setState(() {
       if (AppClass.weigetcounter > 0) {
         AppClass.weigetcounter--;

@@ -18,20 +18,17 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-        ),
-        body: Container(
-          color: Colors.white,
-          child: Column(
-            children: [
-              Expanded(
-                flex: 1,
-                child: Column(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: Container(
+            color: Colors.white,
+            child: Column(
+              children: [
+                Column(
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(15),
+                      padding: const EdgeInsets.only(top: 30),
+                      margin: const EdgeInsets.all(15),
                       alignment: Alignment.center,
                       child: Text(
                         "KING",
@@ -94,57 +91,54 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
-              ),
-              Expanded(
-                flex: 4,
-                child: Center(
+                Center(
                     child: Image.network(
                   "https://t3.ftcdn.net/jpg/02/23/57/42/360_F_223574261_LmzlzkLtjR0cxcDNvkmr2xHfMU69CheO.jpg",
                   fit: BoxFit.fill,
                   scale: .5,
                 )),
-              ),
-              Container(
-                margin: const EdgeInsets.all(30),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                child: SwipeableButtonView(
-                  isFinished: AppClass.isFinish,
-                  onFinish: () async {
-                    await Navigator.push(
-                        context,
-                        PageTransition(
-                            type: PageTransitionType.fade,
-                            child: const genderPage()));
+                Container(
+                  margin: const EdgeInsets.all(30),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                  child: SwipeableButtonView(
+                    isFinished: AppClass.isFinish,
+                    onFinish: () async {
+                      await Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.fade,
+                              child: const GenderPage()));
 
-                    setState(() {
-                      AppClass.isFinish = false;
-                    });
-                  },
-                  onWaitingProcess: () {
-                    Future.delayed(const Duration(seconds: 1), () {
                       setState(() {
-                        AppClass.isFinish = true;
+                        AppClass.isFinish = false;
                       });
-                    });
-                  },
-                  activeColor: AppColors.blue,
-                  buttonWidget: const Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    color: AppColors.blue,
-                  ),
-                  buttonText: "Let's Start",
-                  buttontextstyle: const TextStyle(
-                    decoration: TextDecoration.none,
-                    fontFamily: 'Sitka Small Semibold',
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18,
-                    letterSpacing: 1.5,
-                    color: AppColors.black,
+                    },
+                    onWaitingProcess: () {
+                      Future.delayed(const Duration(seconds: 1), () {
+                        setState(() {
+                          AppClass.isFinish = true;
+                        });
+                      });
+                    },
+                    activeColor: AppColors.blue,
+                    buttonWidget: const Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: AppColors.blue,
+                    ),
+                    buttonText: "Let's Start",
+                    buttontextstyle: const TextStyle(
+                      decoration: TextDecoration.none,
+                      fontFamily: 'Sitka Small Semibold',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                      letterSpacing: 1.5,
+                      color: AppColors.black,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ));
   }

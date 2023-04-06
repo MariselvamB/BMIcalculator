@@ -4,11 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ruler_picker/flutter_ruler_picker.dart';
 
 class AppClass {
-  static final GlobalKey<CurvedNavigationBarState> bottomNavigationKey =
-      GlobalKey();
+  static GlobalKey<CurvedNavigationBarState> bottomNavigationKey = GlobalKey();
   static RulerPickerController rulerPickerController = RulerPickerController();
   static bool isFinish = false;
-  static int heightValue = 110;
+  static int heightValue = 180;
   static int agecounter = 25;
   static int weigetcounter = 80;
   static int index = 0;

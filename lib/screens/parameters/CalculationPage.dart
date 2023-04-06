@@ -1,8 +1,9 @@
-// ignore_for_file: file_names, non_constant_identifier_names
+// ignore_for_file: file_names
 
 import 'package:bmi/screens/gender/Gender.dart';
 import 'package:bmi/units/appclass.dart';
 import 'package:bmi/widgets/Age_widget..dart';
+import 'package:bmi/widgets/CalBMI.dart';
 import 'package:bmi/widgets/Rular_Widget.dart';
 import 'package:bmi/widgets/Weight_widget.dart';
 import 'package:bmi/units/appColors.dart';
@@ -22,11 +23,13 @@ class _CalculationPageState extends State<CalculationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: AppColors.white,
         elevation: 0,
         leading: IconButton(
+          splashRadius: 20,
           icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
             color: AppColors.black,
@@ -36,7 +39,8 @@ class _CalculationPageState extends State<CalculationPage> {
             await Navigator.push(
                 context,
                 PageTransition(
-                    type: PageTransitionType.fade, child: const genderPage()));
+                    type: PageTransitionType.bottomToTop,
+                    child: const GenderPage()));
           },
         ),
         title: const Text(
@@ -51,32 +55,35 @@ class _CalculationPageState extends State<CalculationPage> {
           ),
         ),
       ),
-      body: Container(
-        color: AppColors.white,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Age_Widget(
-                  onChange: (ageVal) {
-                    AppClass.agecounter = ageVal;
-                  },
-                ),
-                WeigetWidget(
-                  onChange: (WeigetVal) {
-                    AppClass.weigetcounter = WeigetVal;
-                  },
-                )
-              ],
-            ),
-            RularWidget(
-              onChange: (HeightVal) {
-                AppClass.heightValue = HeightVal;
-              },
-            )
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.only(top: 20),
+          color: AppColors.white,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  AgeWidget(
+                    onChange: (ageVal) {
+                      AppClass.agecounter = ageVal;
+                    },
+                  ),
+                  WeigetWidget(
+                    onChange: (weigetVal) {
+                      AppClass.weigetcounter = weigetVal;
+                    },
+                  )
+                ],
+              ),
+              RularWidget(
+                onChange: (heightVal) {
+                  AppClass.heightValue = heightVal;
+                },
+              )
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: CurvedNavigationBar(
@@ -94,16 +101,18 @@ class _CalculationPageState extends State<CalculationPage> {
           )
         ],
         onTap: (value) {
-          NavigatorPushResultScreen();
+          navigatorPushResultScreen();
         },
       ),
     );
   }
 
-  void NavigatorPushResultScreen() async {
+  void navigatorPushResultScreen() async {
+    CalculateBMI.calculateBMI();
+    CalculateBMI.getSetBmiInterpretation();
     await Navigator.push(
         context,
         PageTransition(
-            type: PageTransitionType.fade, child: const ResultPage()));
+            type: PageTransitionType.bottomToTop, child: const ResultPage()));
   }
 }

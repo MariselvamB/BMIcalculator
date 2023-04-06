@@ -17,6 +17,7 @@ class _GenderWidgetState extends State<GenderWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(30),
       color: AppColors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

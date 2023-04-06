@@ -1,22 +1,22 @@
-// ignore_for_file: file_names, camel_case_types, non_constant_identifier_names
+// ignore_for_file: file_names
 
 import 'package:bmi/units/appColors.dart';
 import 'package:bmi/units/appclass.dart';
 import 'package:flutter/material.dart';
 
-class Age_Widget extends StatefulWidget {
+class AgeWidget extends StatefulWidget {
   final Function(int) onChange;
 
-  const Age_Widget({
+  const AgeWidget({
     super.key,
     required this.onChange,
   });
 
   @override
-  State<Age_Widget> createState() => _Age_WidgetState();
+  State<AgeWidget> createState() => _AgeWidgetState();
 }
 
-class _Age_WidgetState extends State<Age_Widget> {
+class _AgeWidgetState extends State<AgeWidget> {
   @override
   @override
   Widget build(BuildContext context) {
@@ -92,7 +92,7 @@ class _Age_WidgetState extends State<Age_Widget> {
             children: [
               GestureDetector(
                 onTap: () {
-                  _increment_AgeCounterAdd();
+                  _incrementAgeCounterAdd();
                 },
                 child: Container(
                   margin: const EdgeInsets.all(15),
@@ -123,7 +123,7 @@ class _Age_WidgetState extends State<Age_Widget> {
               ),
               GestureDetector(
                 onTap: () {
-                  _increment_AgeCounterSub();
+                  _incrementAgeCounterSub();
                 },
                 child: Container(
                   margin: const EdgeInsets.all(15),
@@ -159,14 +159,14 @@ class _Age_WidgetState extends State<Age_Widget> {
     );
   }
 
-  void _increment_AgeCounterAdd() {
+  void _incrementAgeCounterAdd() {
     setState(() {
       AppClass.agecounter++;
     });
     widget.onChange(AppClass.agecounter);
   }
 
-  void _increment_AgeCounterSub() {
+  void _incrementAgeCounterSub() {
     setState(() {
       if (AppClass.agecounter > AppClass.index) {
         AppClass.agecounter--;

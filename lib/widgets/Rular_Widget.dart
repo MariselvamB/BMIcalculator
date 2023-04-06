@@ -1,6 +1,4 @@
- 
-
-// ignore_for_file: library_private_types_in_public_api, file_names
+// ignore_for_file: file_names
 
 import 'package:bmi/units/appColors.dart';
 import 'package:bmi/units/appclass.dart';
@@ -12,7 +10,7 @@ class RularWidget extends StatefulWidget {
   const RularWidget({Key? key, required this.onChange}) : super(key: key);
 
   @override
-  _RularWidgetState createState() => _RularWidgetState();
+  State<RularWidget> createState() => _RularWidgetState();
 }
 
 class _RularWidgetState extends State<RularWidget> {
